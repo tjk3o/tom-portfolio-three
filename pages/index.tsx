@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
 import styled from 'styled-components';
+import useDarkMode from '../hooks/useDarkMode';
 
 const HomeWrapper = styled.main`
   background-color: var(--background-color);
@@ -10,51 +9,7 @@ const HomeWrapper = styled.main`
 `;
 
 const Home: NextPage = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  const handleToggle = (event) => {
-    setIsDarkTheme(event.target.checked);
-  };
-
-  const getMediaQueryPreference = () => {
-    const mediaQuery = '(prefers-color-scheme: dark)';
-    const mql = window.matchMedia(mediaQuery);
-    const hasPreference = typeof mql.matches === 'boolean';
-    if (hasPreference) {
-      return mql.matches ? 'dark' : 'light';
-    }
-  };
-
-  const storeUserSetPreference = (pref) => {
-    localStorage.setItem('theme', pref);
-  };
-  const getUserSetPreference = () => {
-    return localStorage.getItem('theme');
-  };
-
-  useEffect(() => {
-    const userSetPreference = getUserSetPreference();
-    if (userSetPreference !== null) {
-      setIsDarkTheme(userSetPreference === 'dark');
-    } else {
-      const mediaQueryPreference = getMediaQueryPreference();
-      setIsDarkTheme(mediaQueryPreference === 'dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (isDarkTheme !== undefined) {
-      if (isDarkTheme) {
-        root.setAttribute('data-theme', 'dark');
-        storeUserSetPreference('dark');
-      } else {
-        root.removeAttribute('data-theme');
-        storeUserSetPreference('light');
-      }
-    }
-  }, [isDarkTheme]);
-
+  const { handleSetIsDarkTheme, isDarkTheme } = useDarkMode();
   return (
     <HomeWrapper>
       <Head>
@@ -68,7 +23,7 @@ const Home: NextPage = () => {
           <input
             type='checkbox'
             checked={isDarkTheme}
-            onChange={handleToggle}
+            onChange={handleSetIsDarkTheme}
           />
           {isDarkTheme === true ? 'Dark' : 'Light'}
         </label>
