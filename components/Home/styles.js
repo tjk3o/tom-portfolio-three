@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { HEADER_HEIGHT } from '../Header/styles';
 import { mediaQueries } from '../../theme';
+import { Switch } from '../Buttons/Toggle/styles';
 
 export const HomeWrapper = styled.main`
   background-color: var(--background-color);
@@ -31,6 +33,16 @@ export const MainAndFooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+export const ToggleText = styled(motion.span)`
+  color: var(--color-primary);
+  margin-right: 10px;
+
+  ${({ showToggleText }) =>
+    showToggleText
+      ? 'opacity: 1; transition: opacity 0.5s;'
+      : 'opacity: 0; transition: opacity 0.5s;'};
 `;
 
 export const Hr = styled.hr`
@@ -83,7 +95,7 @@ export const CardGrid = styled.div`
 
 export const Card = styled.div`
   width: 100%;
-  background: var(--color-pink);
+  background: var(--color-secondary);
   border-radius: 15px;
   padding-bottom: 120%;
 `;

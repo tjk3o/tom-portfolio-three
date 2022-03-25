@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { ToggleText } from '../../Home/styles';
 
 export const SwitchContainer = styled.div`
   width: 60px;
@@ -13,6 +14,11 @@ export const SwitchContainer = styled.div`
 
   ${({ isOn }) =>
     isOn ? 'justify-content: flex-end;' : 'justify-content: flex-start;'};
+  &:hover {
+    ${ToggleText} {
+      opacity: 0;
+    }
+  }
 `;
 
 export const Switch = styled(motion.div)`

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import useDarkMode from '../../hooks/useDarkMode';
 import { Toggle } from '../Buttons/Toggle';
@@ -7,14 +9,21 @@ import {
   HomeWrapper,
   MainAndFooterContainer,
   Main,
+  ToggleText,
   Hr,
   CardGrid,
   Card,
   Footer,
 } from './styles';
+import { useEffect } from 'react';
 
 export default function Home() {
   const { handleSetIsDarkTheme, isDarkTheme } = useDarkMode();
+  const [showToggleText, setShowToggleText] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setShowToggleText(false), 3000);
+  }, []);
   return (
     <HomeWrapper>
       <Head>
@@ -23,6 +32,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header>
+        <ToggleText showToggleText={showToggleText}>dark mode</ToggleText>
+
         <Toggle isOn={isDarkTheme} toggleSwitch={handleSetIsDarkTheme} />
       </Header>
       <MainAndFooterContainer>
