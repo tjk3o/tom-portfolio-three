@@ -23,10 +23,10 @@ export default function DarkModeProvider({ children }: DarkModeProviderProps) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const handleSetIsDarkTheme = useCallback(
-    function (event) {
-      setIsDarkTheme(event.target.checked);
+    function () {
+      setIsDarkTheme(!isDarkTheme);
     },
-    [setIsDarkTheme]
+    [setIsDarkTheme, isDarkTheme]
   );
 
   const getMediaQueryPreference = () => {
