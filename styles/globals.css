@@ -3,12 +3,14 @@
   --color-primary: #000;
   --color-background: #fff;
   --color-secondary: rgb(194, 194, 194);
+  --color-pink: rgb(255, 170, 183);
 }
 [data-theme='dark'] {
   --color-primary-accent: #9d86e9;
   --color-primary: #fff;
   --color-background: #000;
   --color-secondary: rgb(194, 194, 194);
+  --color-pink: pink;
 }
 
 html,
