@@ -1,8 +1,25 @@
-import { createContext, useState, useCallback, useEffect } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useState,
+  useCallback,
+  useEffect,
+} from 'react';
 
-export const DarkModeContext = createContext({});
+type DarkModeContext = {
+  isDarkTheme: boolean;
+  handleSetIsDarkTheme: (preference: string) => void;
+};
+export const DarkModeContext = createContext<DarkModeContext>({
+  isDarkTheme: true,
+  handleSetIsDarkTheme: () => {},
+});
 
-export default function DarkModeProvider({ children }) {
+type DarkModeProviderProps = {
+  children: ReactNode;
+};
+
+export default function DarkModeProvider({ children }: DarkModeProviderProps) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const handleSetIsDarkTheme = useCallback(
@@ -21,8 +38,8 @@ export default function DarkModeProvider({ children }) {
     }
   };
 
-  const storeUserSetPreference = (pref) => {
-    localStorage.setItem('theme', pref);
+  const storeUserSetPreference = (preference: string) => {
+    localStorage.setItem('theme', preference);
   };
   const getUserSetPreference = () => {
     return localStorage.getItem('theme');

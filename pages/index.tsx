@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <h1>Tom's page</h1>
+        <h1>Tom&apos;s page</h1>
         <label>
           <input
             type='checkbox'
