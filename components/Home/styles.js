@@ -99,3 +99,23 @@ export const Card = styled.div`
   border-radius: 15px;
   padding-bottom: 120%;
 `;
+
+export const CreatedBy = styled.span`
+  margin: 0 auto;
+  text-align: right;
+  ${mediaQueries.tabletLandscapeUp`
+    width: 940px;
+  `};
+  ${mediaQueries.tabletLargeUp`
+    width: 1000px;
+  `};
+  ${mediaQueries.desktopUp`
+    width: 1180px;
+  `};
+  ${mediaQueries.desktopLargeUp`
+    width: 1420px;
+  `};
+  ${mediaQueries.desktopXLUp`
+    width: 1920px;
+  `};
+`;

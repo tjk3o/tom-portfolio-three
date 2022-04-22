@@ -1,0 +1,158 @@
+{
+  "slices": {
+    "components": {
+      "home": {
+        "library": "slices",
+        "id": "home",
+        "name": "Home",
+        "description": "Home",
+        "model": {
+          "id": "home",
+          "type": "SharedSlice",
+          "name": "Home",
+          "description": "Home",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Home",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "home",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Aggregate plug-and-play niches",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Elit id duis eu aliqua anim enim laboris enim deserunt magna incididunt esse. Qui tempor officia velit minim non sunt nulla ut aute.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/tom.keogh/Development/tom-portfolio-three/.slicemachine/assets/slices/Home/default/preview.png",
+            "width": 800,
+            "height": 86
+          }
+        }
+      },
+      "home_article": {
+        "library": "slices",
+        "id": "home_article",
+        "name": "HomeArticle",
+        "description": "HomeArticle",
+        "model": {
+          "id": "home_article",
+          "type": "SharedSlice",
+          "name": "HomeArticle",
+          "description": "HomeArticle",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HomeArticle",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "home_article",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Scale strategic e-tailers",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Ea officia quis id mollit reprehenderit cillum adipisicing eu laboris aliqua ad nulla elit. Culpa aliquip elit id proident deserunt nulla non anim dolore velit adipisicing velit aliquip. Mollit enim laborum proident excepteur irure ad culpa adipisicing veniam nisi id.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/tom.keogh/Development/tom-portfolio-three/.slicemachine/assets/slices/HomeArticle/default/preview.png",
+            "width": 800,
+            "height": 1081
+          }
+        }
+      }
+    }
+  }
+}

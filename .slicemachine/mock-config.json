@@ -1,0 +1,16 @@
+{
+  "_cts": {
+    "home": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "Home": {},
+    "HomeArticle": {}
+  }
+}

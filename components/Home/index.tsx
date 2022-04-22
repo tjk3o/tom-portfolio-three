@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
+import { SliceZone } from '@prismicio/react';
 import useDarkMode from '../../hooks/useDarkMode';
 import { Toggle } from '../Buttons/Toggle';
 import Header from '../Header';
@@ -12,14 +12,17 @@ import {
   ToggleText,
   Hr,
   CardGrid,
-  Card,
+  CreatedBy,
   Footer,
 } from './styles';
 import { useEffect } from 'react';
+import { PrismicRichText } from '@prismicio/react';
+import { components } from '../../slices';
 
-export default function Home() {
+export default function Home({ data }) {
   const { handleSetIsDarkTheme, isDarkTheme } = useDarkMode();
   const [showToggleText, setShowToggleText] = useState(true);
+  console.log(data);
 
   useEffect(() => {
     setTimeout(() => setShowToggleText(false), 3000);
@@ -39,17 +42,14 @@ export default function Home() {
       <MainAndFooterContainer>
         <Main>
           <Avatar />
-          <h1>Tom&apos;s page</h1>
+          <PrismicRichText field={data.title} />
           <Hr />
           <CardGrid>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <SliceZone slices={data.slices} components={components} />
           </CardGrid>
         </Main>
         <Footer>
-          <span>Created by tjk3o</span>
+          <CreatedBy>Created by tjk3o</CreatedBy>
         </Footer>
       </MainAndFooterContainer>
     </HomeWrapper>
