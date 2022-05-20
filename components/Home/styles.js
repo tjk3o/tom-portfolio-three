@@ -2,13 +2,22 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { HEADER_HEIGHT } from '../Header/styles';
 import { mediaQueries } from '../../theme';
-import { Switch } from '../Buttons/Toggle/styles';
 
 export const HomeWrapper = styled.main`
   background-color: var(--background-color);
   height: 100vh;
   flex: 1 1 0;
   display: block;
+`;
+
+export const ToggleText = styled(motion.span)`
+  color: var(--color-primary);
+  margin-right: 10px;
+
+  ${({ showToggleText }) =>
+    showToggleText
+      ? 'opacity: 1; transition: opacity 0.5s;'
+      : 'opacity: 0; transition: opacity 0.5s;'};
 `;
 
 export const Main = styled.main`
@@ -33,16 +42,6 @@ export const MainAndFooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
-
-export const ToggleText = styled(motion.span)`
-  color: var(--color-primary);
-  margin-right: 10px;
-
-  ${({ showToggleText }) =>
-    showToggleText
-      ? 'opacity: 1; transition: opacity 0.5s;'
-      : 'opacity: 0; transition: opacity 0.5s;'};
 `;
 
 export const Hr = styled.hr`
