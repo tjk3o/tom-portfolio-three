@@ -7,6 +7,7 @@ const Card = styled.section`
   background: var(--color-secondary);
   border-radius: 15px;
   padding-bottom: 120%;
+  color: var(--color-background);
 `;
 
 const HomeArticle = ({ slice }) => (

@@ -152,6 +152,68 @@
             "height": 1081
           }
         }
+      },
+      "page_heading": {
+        "library": "slices",
+        "id": "page_heading",
+        "name": "PageHeading",
+        "description": "PageHeading",
+        "model": {
+          "id": "page_heading",
+          "type": "SharedSlice",
+          "name": "PageHeading",
+          "description": "PageHeading",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "PageHeading",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "Tom's stuff",
+                    "allowTargetBlank": true,
+                    "single": "heading1"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "page_heading",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Reintermediate transparent architectures",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/tom.keogh/Development/tom-portfolio-three/.slicemachine/assets/slices/PageHeading/default/preview.png",
+            "width": 800,
+            "height": 151
+          }
+        }
       }
     }
   }

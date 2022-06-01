@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { createClient } from '../prismicio';
 import Home from '../components/Home';
 
@@ -8,7 +8,10 @@ const HomePage: NextPage = ({ home }) => {
 
 export default HomePage;
 
-export async function getStaticProps({ params, previewData }) {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+  previewData,
+}) => {
   const client = createClient({ previewData });
   console.log(params?.uid);
 
@@ -18,4 +21,4 @@ export async function getStaticProps({ params, previewData }) {
   return {
     props: { home },
   };
-}
+};

@@ -21,6 +21,9 @@
           "choices": {
             "home_article": {
               "type": "SharedSlice"
+            },
+            "page_heading": {
+              "type": "SharedSlice"
             }
           }
         }

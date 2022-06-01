@@ -11,6 +11,18 @@
   },
   "slices": {
     "Home": {},
-    "HomeArticle": {}
+    "HomeArticle": {},
+    "PageHeading": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { HEADER_HEIGHT } from '../Header/styles';
 import { mediaQueries } from '../../theme';
-import { Switch } from '../Buttons/Toggle/styles';
 
 export const HomeWrapper = styled.main`
   background-color: var(--background-color);
   height: 100vh;
   flex: 1 1 0;
   display: block;
+  margin-top: 80px;
 `;
 
 export const Main = styled.main`
@@ -16,6 +15,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 40px;
 `;
 
 export const Footer = styled.footer`
@@ -35,21 +35,41 @@ export const MainAndFooterContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const ToggleText = styled(motion.span)`
+export const HeadingContainer = styled.div`
+  font-size: 16px;
   color: var(--color-primary);
-  margin-right: 10px;
+  background: var(--color-header-background);
 
-  ${({ showToggleText }) =>
-    showToggleText
-      ? 'opacity: 1; transition: opacity 0.5s;'
-      : 'opacity: 0; transition: opacity 0.5s;'};
+  width: 100%;
+`;
+
+export const Heading = styled.div`
+  font-size: 16px;
+  margin: 0 auto;
+  padding-bottom: 1px;
+  width: calc(100% - 20px);
+
+  ${mediaQueries.tabletLandscapeUp`
+  width: 940px;
+`};
+  ${mediaQueries.tabletLargeUp`
+  width: 1000px;
+`};
+  ${mediaQueries.desktopUp`
+  width: 1180px;
+`};
+  ${mediaQueries.desktopLargeUp`
+  width: 1420px;
+`};
+  ${mediaQueries.desktopXLUp`
+  width: 1920px;
+`};
 `;
 
 export const Hr = styled.hr`
   height: 1px;
-  color: var(--color-secondary);
-  width: calc(100% - 20px);
-  margin-bottom: 50px;
+  border-color: var(--color-tertiary);
+  margin: 0 0 50px;
   ${mediaQueries.tabletLandscapeUp`
     width: 940px;
   `};
@@ -68,7 +88,7 @@ export const Hr = styled.hr`
 `;
 
 export const CardGrid = styled.div`
-  margin: 0 10px;
+  margin: 10px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 10px;

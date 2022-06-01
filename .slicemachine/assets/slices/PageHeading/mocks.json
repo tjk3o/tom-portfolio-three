@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "page_heading",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Reintermediate transparent architectures",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

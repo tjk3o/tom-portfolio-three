@@ -2,13 +2,16 @@
 
 import Home from './Home';
 import HomeArticle from './HomeArticle';
+import PageHeading from './PageHeading';
 
 export {
 	Home,
 	HomeArticle,
+	PageHeading,
 };
 
 export const components = {
 	home: Home,
 	home_article: HomeArticle,
+	page_heading: PageHeading,
 };
