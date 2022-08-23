@@ -20,7 +20,7 @@ import { components } from '../../slices';
 export default function Home({ data }) {
   const { handleSetIsDarkTheme, isDarkTheme } = useDarkMode();
   const [showToggleText, setShowToggleText] = useState(true);
-  console.log(data);
+  const [openCard, setOpenCard] = useState();
 
   useEffect(() => {
     setTimeout(() => setShowToggleText(false), 3000);
@@ -28,8 +28,8 @@ export default function Home({ data }) {
   return (
     <HomeWrapper>
       <Head>
-        <title>Tom Keogh | Portfolio</title>
-        <meta name='description' content="Tom Keogh's portfolio site" />
+        <title>Tom Keogh</title>
+        <meta name='description' content="Tom Keogh's site" />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header
@@ -45,7 +45,11 @@ export default function Home({ data }) {
       <MainAndFooterContainer>
         <Main>
           <CardGrid>
-            <SliceZone slices={data.slices} components={components} />
+            <SliceZone
+              slices={data.slices}
+              components={components}
+              context={{ openCard, setOpenCard }}
+            />
           </CardGrid>
         </Main>
         <Footer>

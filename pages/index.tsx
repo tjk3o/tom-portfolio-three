@@ -8,15 +8,10 @@ const HomePage: NextPage = ({ home }) => {
 
 export default HomePage;
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-  previewData,
-}) => {
+export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData });
-  console.log(params?.uid);
 
   const home = await client.getSingle('home');
-  console.log(home);
 
   return {
     props: { home },

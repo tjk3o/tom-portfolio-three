@@ -3,7 +3,7 @@
   --color-primary: #000;
   --color-background: rgb(255, 255, 255, 1);
   --color-secondary: rgb(194, 194, 194);
-  --color-tertiary: rgb(247, 247, 247, 0.99);
+  --color-tertiary: rgb(247, 247, 247, 0.97);
   --color-pink: rgb(255, 170, 183);
   --color-header-background: rgb(247, 247, 247, 1);
 }
@@ -12,7 +12,7 @@
   --color-primary: rgb(255, 255, 255);
   --color-background: rgb(0, 0, 0, 1);
   --color-secondary: rgb(255, 255, 255);
-  --color-tertiary: rgb(24, 24, 24, 0.99);
+  --color-tertiary: rgb(24, 24, 24, 0.97);
   --color-pink: pink;
   --color-header-background: rgb(0, 0, 0, 1);
 }

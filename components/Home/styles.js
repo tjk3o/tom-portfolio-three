@@ -15,7 +15,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 10px;
 `;
 
 export const Footer = styled.footer`
@@ -88,11 +88,12 @@ export const Hr = styled.hr`
 `;
 
 export const CardGrid = styled.div`
-  margin: 10px;
+  position: relative;
+  margin: 10px 0;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 10px;
-  width: calc(100% - 20px);
+  width: 100%;
   ${mediaQueries.tabletLandscapeUp`
     margin: 0;
     width: 940px;

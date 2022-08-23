@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 
 export const ToggleText = styled(motion.span)`
   color: var(--color-primary);
-  margin-right: 10px;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  font-size: 12px;
 
   ${({ showToggleText }) =>
     showToggleText

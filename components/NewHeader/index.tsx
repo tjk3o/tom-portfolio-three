@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import { Toggle } from '../Buttons/Toggle';
-import { ToggleText } from './styles';
 
 function Header({
   handleSetIsDarkTheme,
@@ -12,7 +11,12 @@ function Header({
   isDarkTheme: boolean;
   showToggleText: boolean;
 }): React.ReactElement {
+  const [scrollYOffset, setScrollYOffset] = useState(0);
   const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    setScrollYOffset(window?.scrollY);
+  }, []);
 
   const headerColor = useTransform(
     scrollY,
@@ -23,12 +27,14 @@ function Header({
       'var(--color-tertiary)',
     ]
   );
-  const headerTitleOpacity = useTransform(scrollY, [58, 59], ['0%', '100%']);
-  console.log(scrollY);
+
+  const threshold = scrollY === 0 ? scrollYOffset : scrollY;
+  const headerTitleOpacity = useTransform(threshold, [58, 59], ['0%', '100%']);
   return (
     <motion.header
       style={{
         position: 'fixed',
+        zIndex: 2,
         top: 0,
         width: '100%',
         height: 80,
@@ -39,7 +45,6 @@ function Header({
         padding: '0 10px',
       }}
     >
-      {/* <ToggleText showToggleText={showToggleText}>dark mode</ToggleText> */}
       <motion.h1
         style={{
           color: 'var(--color-primary)',
@@ -49,9 +54,13 @@ function Header({
           fontSize: '16px',
         }}
       >
-        Tom's stuff
+        Tom Keogh
       </motion.h1>
-      <Toggle isOn={isDarkTheme} toggleSwitch={handleSetIsDarkTheme} />
+      <Toggle
+        isOn={isDarkTheme}
+        toggleSwitch={handleSetIsDarkTheme}
+        showToggleText={showToggleText}
+      />
     </motion.header>
   );
 }
